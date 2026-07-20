@@ -1,0 +1,8 @@
+.env
+*.pyc
+__pycache__/
+.venv/
+venv/
+visibility-engine/data/runs/
+visibility-engine/data/clients/*.json
+!visibility-engine/data/clients/_example.json
