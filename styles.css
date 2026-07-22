@@ -143,16 +143,26 @@ p {
 
 /* Logo */
 .logo {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: -0.02em;
+  line-height: 0;
 }
 
-.logo span {
-  color: var(--color-accent);
+.logo img {
+  display: block;
+  width: auto;
+  height: 1.6rem;
+}
+
+.logo-footer img {
+  height: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .logo img {
+    height: 1.35rem;
+  }
 }
 
 /* Buttons */
