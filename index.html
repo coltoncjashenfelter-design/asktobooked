@@ -28,6 +28,97 @@
   <meta name="twitter:description" content="Find out whether AI search already picked your competitor over you — and exactly what to do about it.">
   <meta name="twitter:image" content="https://asktobooked.com/og-image.png">
 
+  <!-- Structured data: practice what the guide preaches -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://asktobooked.com/#org",
+        "name": "asktobooked",
+        "url": "https://asktobooked.com/",
+        "logo": "https://asktobooked.com/icon-512.png",
+        "image": "https://asktobooked.com/og-image.png",
+        "email": "contact@asktobooked.com",
+        "description": "AI search visibility audits and field guides for home service businesses."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://asktobooked.com/#website",
+        "url": "https://asktobooked.com/",
+        "name": "asktobooked",
+        "publisher": { "@id": "https://asktobooked.com/#org" }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://asktobooked.com/#guide",
+        "name": "Who Shows Up First? — Field Guide (Self-Audit Edition)",
+        "description": "A 14-page field guide for home service businesses: audit whether AI search names you or your competitor, then fix what AI can't see — with ready-made prompts, a scorecard, and a 7-day action plan.",
+        "image": "https://asktobooked.com/og-image.png",
+        "brand": { "@id": "https://asktobooked.com/#org" },
+        "offers": {
+          "@type": "Offer",
+          "price": "29.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://asktobooked.com/#purchase",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 30,
+            "refundType": "https://schema.org/FullRefund"
+          }
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://asktobooked.com/#consulting",
+        "name": "Personalized AI Visibility Audit",
+        "provider": { "@id": "https://asktobooked.com/#org" },
+        "description": "A done-for-you audit across ChatGPT, Perplexity, and Google AI Overview: competitor comparison, prioritized fix list, and optional monthly tracking. Limited to three new clients per month.",
+        "url": "https://asktobooked.com/#consulting"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://asktobooked.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you guarantee first place in ChatGPT?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No — and be wary of anyone who does. We help you close clarity gaps your competitors haven't. The goal is visibility habits, not a magic ranking." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to know how to code?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The guide uses tools you already have — your Google Business Profile, website builder, and directories. Most fixes take minutes, not a developer." }
+          },
+          {
+            "@type": "Question",
+            "name": "How is consulting different from the guide?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The guide teaches you to run the audit yourself. Consulting means we run it for you, compare your competitors, and hand you a prioritized fix list — plus optional monthly tracking." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why only three spots?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Each audit is personalized — your trade, your city, your competitors. We cap intake so every client gets real attention, not a templated report." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why isn't my Google ranking enough?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Research found fewer than half of businesses ranking well in ordinary local search also showed up in AI answers. They're two separate contests." }
+          },
+          {
+            "@type": "Question",
+            "name": "What if the guide doesn't work for me?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Every purchase comes with a 30-day money-back guarantee. If you work through it and don't feel it was worth it, email contact@asktobooked.com within 30 days for a full refund." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
@@ -45,6 +136,7 @@
         <a href="#how-it-works">How It Works</a>
         <a href="#inside">What's Inside</a>
         <a href="#consulting">Consulting</a>
+        <a href="#mini-audit">Free Check</a>
         <a href="#purchase" class="nav-cta">Get the Guide</a>
       </nav>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
@@ -133,6 +225,57 @@
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- From the audit files -->
+    <section id="audit-files" class="audit-files">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">From the audit files</p>
+          <h2>We've already run this audit. Here's what it finds.</h2>
+          <p>Anonymized findings from audits run on real businesses in cities around the country. Names withheld — the gaps are the point.</p>
+        </header>
+        <!--
+          AUDIT CARDS — REPLACE BRACKETS WITH REAL RUN DATA BEFORE PUBLISHING.
+          Each card = one real audit. Keep findings specific: platform, prompt type,
+          how many answers named them vs. the competitor.
+        -->
+        <div class="audit-grid">
+          <article class="audit-card">
+            <header class="audit-card-head">
+              <span class="audit-trade">[TRADE]</span>
+              <span class="audit-city">[CITY, ST]</span>
+            </header>
+            <p class="audit-finding">
+              [FINDING — e.g. Named in 0 of 12 AI answers for emergency prompts in their own service area. A competitor nine minutes away took 11 of the 12.]
+            </p>
+            <p class="audit-cost">Estimated annual exposure: <strong>$[XX],000+</strong></p>
+          </article>
+          <article class="audit-card">
+            <header class="audit-card-head">
+              <span class="audit-trade">[TRADE]</span>
+              <span class="audit-city">[CITY, ST]</span>
+            </header>
+            <p class="audit-finding">
+              [FINDING — e.g. ChatGPT recommended them by name — with a phone number that's been disconnected for two years.]
+            </p>
+            <p class="audit-cost">Estimated annual exposure: <strong>$[XX],000+</strong></p>
+          </article>
+          <article class="audit-card">
+            <header class="audit-card-head">
+              <span class="audit-trade">[TRADE]</span>
+              <span class="audit-city">[CITY, ST]</span>
+            </header>
+            <p class="audit-finding">
+              [FINDING — e.g. Ranked #2 in Google Maps for their trade. Never once named by Google's own AI Overview for the same searches.]
+            </p>
+            <p class="audit-cost">Estimated annual exposure: <strong>$[XX],000+</strong></p>
+          </article>
+        </div>
+        <p class="audit-method">
+          How we estimate exposure: calls the audit shows going elsewhere, times typical ticket values for the trade — an emergency plumbing call runs $250–$800; a full HVAC replacement $7,000–$18,000. Estimates are conservative and rounded down.
+        </p>
       </div>
     </section>
 
@@ -239,6 +382,28 @@
       </div>
     </section>
 
+    <!-- About -->
+    <section id="about" class="founder">
+      <div class="container">
+        <div class="founder-box">
+          <p class="eyebrow">About asktobooked</p>
+          <h2>It started with a car repair.</h2>
+          <p>
+            Before asktobooked was a company, it was a question. While researching local mechanics, we watched an AI tool answer with one confident name — and wondered what made that shop "better" than the ten others within five miles of it. The uncomfortable answer: nothing. It was simply the one the machines could read.
+          </p>
+          <p>
+            That question became a testing rig, and the rig became a practice: asking AI platforms the exact questions customers ask — emergency calls, comparisons, "who do you recommend" — in cities across the country, then tracking which businesses get named and reverse-engineering why. The pattern is remarkably consistent. And most of what decides it can be fixed in an afternoon.
+          </p>
+          <p>
+            The field guide is that practice written down in plain language. The consulting is us running it for you.
+          </p>
+          <p class="founder-contact">
+            Questions before you buy? <a href="mailto:contact@asktobooked.com">contact@asktobooked.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Purchase -->
     <section id="purchase" class="purchase">
       <div class="container purchase-grid">
@@ -256,7 +421,7 @@
           </ul>
           <p class="purchase-price">
             <span class="price-amount">$29.99</span>
-            <span class="price-note">One-time purchase · Instant delivery</span>
+            <span class="price-note">One-time purchase · Instant delivery · 30-day money-back guarantee</span>
           </p>
         </div>
         <div class="purchase-form-wrap">
@@ -271,6 +436,9 @@
           <p class="embed-placeholder">
             Secure checkout through Stripe and Link.<br>
             One-time payment · Instant PDF delivery
+          </p>
+          <p class="guarantee-note">
+            <strong>30-day guarantee:</strong> work through the guide, and if you don't feel it was worth it, email us for a full refund. No forms, no hoops.
           </p>
         </div>
       </div>
@@ -316,6 +484,30 @@
       </div>
     </section>
 
+    <!-- Free mini-audit (lead capture) -->
+    <section id="mini-audit" class="mini-audit">
+      <div class="container">
+        <div class="mini-audit-box">
+          <p class="eyebrow">Free — no purchase needed</p>
+          <h2>Not sure yet? Run one free check.</h2>
+          <p>
+            Send your business name, trade, and city. We'll ask ChatGPT one real customer-style question — like "who's a good [your trade] near me?" — and email you exactly what it says back. Who gets named, and whether it's you.
+          </p>
+          <!--
+            ZOHO CAMPAIGNS FORM:
+            When your Zoho signup form is ready, paste its embed code here
+            and delete the fallback link below.
+          -->
+          <p class="mini-audit-cta">
+            <a href="mailto:contact@asktobooked.com?subject=Free%20mini-audit%20request&amp;body=Business%20name%3A%0ATrade%3A%0ACity%3A" class="btn btn-secondary">
+              Request the Free Mini-Audit
+            </a>
+          </p>
+          <p class="mini-audit-note">One email back, usually within a day. No spam, no drip campaign.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="faq">
       <div class="container">
@@ -340,6 +532,10 @@
           <div class="faq-item">
             <dt>Why isn't my Google ranking enough?</dt>
             <dd>Research found fewer than half of businesses ranking well in ordinary local search also showed up in AI answers. They're two separate contests.</dd>
+          </div>
+          <div class="faq-item">
+            <dt>What if the guide doesn't work for me?</dt>
+            <dd>Every purchase comes with a 30-day money-back guarantee. If you work through it and don't feel it was worth it, email <a href="mailto:contact@asktobooked.com">contact@asktobooked.com</a> within 30 days for a full refund.</dd>
           </div>
         </dl>
       </div>

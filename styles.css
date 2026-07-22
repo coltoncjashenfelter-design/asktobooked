@@ -896,3 +896,143 @@ p {
     font-size: 1.5rem;
   }
 }
+
+/* Founder */
+.founder {
+  padding: 4rem 0;
+}
+
+.founder-box {
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 2.5rem;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+}
+
+.founder-box h2 {
+  margin-bottom: 1rem;
+}
+
+.founder-contact {
+  margin-bottom: 0;
+  color: var(--color-ink-muted);
+  font-size: 0.9375rem;
+}
+
+/* Guarantee note (purchase card) */
+.guarantee-note {
+  margin-top: 1rem;
+  padding: 0.875rem 1rem;
+  background: #e8f3ec;
+  border-radius: var(--radius-sm, 8px);
+  color: var(--color-success);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Free mini-audit */
+.mini-audit {
+  padding: 4rem 0;
+  background: var(--color-bg-alt);
+}
+
+.mini-audit-box {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.mini-audit-box h2 {
+  margin-bottom: 1rem;
+}
+
+.mini-audit-cta {
+  margin: 1.75rem 0 0.75rem;
+}
+
+.mini-audit-note {
+  color: var(--color-ink-soft);
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/* Audit files (proof section) */
+.audit-files {
+  padding: 5rem 0;
+  background: var(--color-bg-alt);
+}
+
+.audit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.audit-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-navy);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.audit-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.audit-trade {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-navy);
+}
+
+.audit-city {
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+.audit-finding {
+  flex: 1;
+  font-size: 0.9375rem;
+  color: var(--color-ink-muted);
+}
+
+.audit-cost {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+}
+
+.audit-cost strong {
+  color: var(--color-accent);
+  font-size: 1.0625rem;
+}
+
+.audit-method {
+  max-width: 720px;
+  margin: 2rem auto 0;
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .audit-grid {
+    grid-template-columns: 1fr;
+  }
+}
