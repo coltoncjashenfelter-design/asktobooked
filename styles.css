@@ -654,13 +654,6 @@ p {
   line-height: 1.6;
 }
 
-.embed-placeholder code {
-  font-size: 0.8125rem;
-  background: var(--color-bg-alt);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-}
-
 /* Consulting */
 .consulting {
   padding: 5rem 0;
@@ -927,7 +920,7 @@ p {
   margin-top: 1rem;
   padding: 0.875rem 1rem;
   background: #e8f3ec;
-  border-radius: var(--radius-sm, 8px);
+  border-radius: var(--radius);
   color: var(--color-success);
   font-size: 0.875rem;
   line-height: 1.5;
