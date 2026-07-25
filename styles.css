@@ -1857,3 +1857,39 @@ body.drawer-open {
 .form-banner:target {
   display: block;
 }
+
+/* --------------------------------------------------------------------------
+   Image logo (consulting / contact / contact-form / 404 / legal pages).
+   Those pages use <img src="logo.png" width="760">; index, guide and about
+   use a text logo. Without an explicit height the image renders at its
+   natural 760px width and blows out the header.
+   -------------------------------------------------------------------------- */
+.logo:has(img) {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.logo img {
+  display: block;
+  width: auto;
+  height: 1.6rem;
+}
+
+.logo-footer:has(img) {
+  line-height: 0;
+}
+
+@media (max-width: 640px) {
+  .logo img {
+    height: 1.35rem;
+  }
+}
+
+/* Contact form: collapse multi-column field rows on small screens. */
+@media (max-width: 640px) {
+  .form-grid,
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
