@@ -2141,3 +2141,44 @@ body.drawer-open {
 .contact-reasons strong {
   color: var(--color-ink);
 }
+
+/* Contact form failure path — recoverable, not a dead end. */
+.form-error p {
+  margin: 0 0 0.75rem;
+}
+
+.form-error p:last-child {
+  margin-bottom: 0;
+}
+
+.form-error .btn {
+  margin: 0.25rem 0;
+}
+
+.form-error-note {
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+/* Money-back guarantee, shown next to the buy button. */
+.guarantee {
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.35rem;
+  background: #eef6f1;
+  border: 1px solid #bcdccb;
+  border-radius: var(--radius);
+}
+
+.guarantee strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--color-success);
+  font-size: 0.9375rem;
+}
+
+.guarantee p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+}
