@@ -6,3 +6,9 @@ venv/
 visibility-engine/data/runs/
 visibility-engine/data/clients/*.json
 !visibility-engine/data/clients/_example.json
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
