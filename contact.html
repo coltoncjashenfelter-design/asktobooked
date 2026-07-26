@@ -20,50 +20,31 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="asktobooked — home">
-        <img src="logo.png" alt="asktobooked" width="760" height="104">
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="guide.html">Field Guide</a>
-        <a href="consulting.html">Consulting</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="guide.html#purchase" class="nav-cta">Get the Guide</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="/" class="logo" aria-label="asktobooked — home"><img src="logo.png" alt="" width="760" height="104"></a>
+      <div class="header-actions">
+        <a href="guide.html#purchase" class="btn btn-primary btn-sm">Get the Guide</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <div class="drawer-overlay"></div>
-  <nav class="drawer" id="drawer" aria-label="All pages">
+  <nav class="drawer" id="drawer" aria-label="Site navigation">
     <div class="drawer-head">
       <span class="drawer-title">Menu</span>
       <button class="drawer-close" aria-label="Close menu">&times;</button>
     </div>
-    <div class="drawer-group">
-      <p class="drawer-label">Field Guide</p>
-      <a href="guide.html">Overview</a>
-      <a href="guide.html#how-it-works">How it works</a>
-      <a href="guide.html#inside">What's inside</a>
-      <a href="guide.html#purchase">Get the guide — $29.99</a>
-    </div>
-    <div class="drawer-group">
-      <p class="drawer-label">Services</p>
-      <a href="consulting.html">Consulting</a>
-      <a href="contact-form.html?topic=mini-audit">Free mini-audit</a>
-    </div>
-    <div class="drawer-group">
-      <p class="drawer-label">Company</p>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="drawer-group">
-      <p class="drawer-label">Legal</p>
-      <a href="privacy.html">Privacy policy</a>
-      <a href="terms.html">Terms of service</a>
-      <a href="refund-policy.html">Refund policy</a>
+    <a class="drawer-link" href="/">Home</a>
+    <a class="drawer-link" href="guide.html">Field Guide <span class="drawer-meta">$29.99</span></a>
+    <a class="drawer-link" href="consulting.html">Consulting</a>
+    <a class="drawer-link" href="about.html">About</a>
+    <a class="drawer-link" href="contact.html">Contact</a>
+    <div class="drawer-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund-policy.html">Refunds</a>
     </div>
   </nav>
 
@@ -72,31 +53,21 @@
       <header class="page-header">
         <p class="eyebrow">Contact</p>
         <h1>Talk to a human.</h1>
-        <p class="lead">Everything here runs with a dedicated support team, answered by a person within one business day.</p>
+        <p class="lead">One inbox, read by a person, answered within one business day.</p>
       </header>
 
       <div class="contact-card">
-        <h2>Send us a message</h2>
-        <p>For anything: questions before you buy, consulting, press, or just to tell us who AI named when you asked about your trade.</p>
-        <p><a href="contact-form.html" class="btn btn-primary">Open the Contact Form</a></p>
+        <h2>What people write in about</h2>
+        <ul class="contact-reasons">
+          <li><strong>Questions before you buy</strong> — whether the guide fits your trade, what's actually in it.</li>
+          <li><strong>A free mini-audit</strong> — send your business name, trade, and city. We'll ask AI one real customer question and email you exactly what came back.</li>
+          <li><strong>Consulting</strong> — request a strategy call about the <a href="consulting.html">Personalized AI Visibility Audit</a>. The call is free.</li>
+          <li><strong>Order or refund help</strong> — include the email address you used at checkout so we can find your order. Terms are in the <a href="refund-policy.html">refund policy</a>.</li>
+        </ul>
+        <p>
+          <a href="contact-form.html" class="btn btn-primary btn-large">Open the Contact Form</a>
+        </p>
         <p class="form-note">Prefer your own email app? Write to <strong>contact@asktobooked.com</strong> — same inbox, same human.</p>
-      </div>
-
-      <div class="contact-card">
-        <h2>Order or download trouble</h2>
-        <p>Bought the guide and something went sideways? <a href="contact-form.html?topic=order">Send us a message</a> and <strong>include the email address you used at checkout</strong> — that's how we find your order fastest. Refund requests work the same way; see the <a href="refund-policy.html">refund policy</a>.</p>
-      </div>
-
-      <div class="contact-card">
-        <h2>Free mini-audit</h2>
-        <p>Not sure the guide is for you? Send your business name, trade, and city. We'll ask ChatGPT one real customer-style question and email you exactly what it says back.</p>
-        <p><a href="contact-form.html?topic=mini-audit" class="btn btn-secondary">Request the Free Mini-Audit</a></p>
-      </div>
-
-      <div class="contact-card">
-        <h2>Consulting</h2>
-        <p>Want us to run the full audit for you? Read about the <a href="consulting.html">Personalized AI Visibility Audit</a>, or request a strategy call directly.</p>
-        <p><a href="contact-form.html?topic=strategy-call" class="btn btn-primary">Request Your Strategy Call</a></p>
       </div>
     </div>
   </main>
@@ -104,9 +75,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo logo-footer">
-          <img src="logo-light.png" alt="asktobooked" width="760" height="104" loading="lazy">
-        </span>
+        <span class="logo logo-footer"><img src="logo-light.png" alt="asktobooked" width="760" height="104" loading="lazy"></span>
         <p>Recheck monthly. That's the whole system.</p>
       </div>
       <div class="footer-links">

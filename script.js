@@ -75,3 +75,56 @@
     });
   });
 })();
+
+/* ---------------------------------------------------------------------------
+   Homepage exposure estimator.
+   Pure arithmetic on numbers the visitor supplies — no assumptions baked in,
+   nothing claimed about what AI referral rates actually are.
+   --------------------------------------------------------------------------- */
+(function () {
+  var form = document.getElementById('exposure-form');
+  if (!form) return;
+
+  var jobs   = document.getElementById('ex-jobs');
+  var value  = document.getElementById('ex-value');
+  var online = document.getElementById('ex-new');
+  var ai     = document.getElementById('ex-ai');
+
+  var outOnline  = document.getElementById('ex-new-out');
+  var outAi      = document.getElementById('ex-ai-out');
+  var total      = document.getElementById('ex-total');
+  var onlineCell = document.getElementById('ex-online');
+  var exposed    = document.getElementById('ex-exposed');
+
+  var money = new Intl.NumberFormat('en-US', {
+    style: 'currency', currency: 'USD', maximumFractionDigits: 0
+  });
+
+  function num(el, fallback) {
+    var n = parseFloat(el.value);
+    return isFinite(n) && n >= 0 ? n : fallback;
+  }
+
+  function update() {
+    var annual        = num(jobs, 0) * 12 * num(value, 0);
+    var onlineShare   = num(online, 0) / 100;
+    var aiShare       = num(ai, 0) / 100;
+    var onlineRevenue = annual * onlineShare;
+
+    outOnline.textContent = Math.round(num(online, 0)) + '%';
+    outAi.textContent     = Math.round(num(ai, 0)) + '%';
+
+    total.textContent      = money.format(annual);
+    onlineCell.textContent = money.format(onlineRevenue);
+    exposed.textContent    = money.format(onlineRevenue * aiShare);
+  }
+
+  [jobs, value, online, ai].forEach(function (el) {
+    el.addEventListener('input', update);
+    el.addEventListener('change', update);
+  });
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+
+  update();
+})();

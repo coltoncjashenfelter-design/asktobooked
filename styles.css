@@ -1893,3 +1893,251 @@ body.drawer-open {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   DRAWER-ONLY NAVIGATION
+   The header carries the logo, one CTA, and the menu button. All navigation
+   lives in the drawer, on every screen size — no inline top nav.
+   ========================================================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-sm {
+  padding: 0.55rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Hamburger is always visible now, not just on mobile. */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.6rem;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.menu-toggle:hover {
+  border-color: var(--color-ink-soft);
+  background: var(--color-surface);
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.drawer-link:hover {
+  color: var(--color-accent);
+}
+
+.drawer-meta {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.drawer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.drawer-legal a {
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+}
+
+.drawer-legal a:hover {
+  color: var(--color-ink);
+}
+
+@media (max-width: 560px) {
+  .header-actions .btn-sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* ==========================================================================
+   HOMEPAGE — pain points, exposure estimator, three channels
+   ========================================================================== */
+.pain {
+  padding: 5rem 0;
+  background: var(--color-bg-alt);
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.pain-card {
+  padding: 1.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+}
+
+.pain-card h3 {
+  font-size: 1.1rem;
+}
+
+.pain-card p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+}
+
+/* Exposure estimator */
+.exposure {
+  padding: 5rem 0;
+  background: var(--color-navy);
+  color: #fff;
+}
+
+.exposure h2,
+.exposure .section-header h2 {
+  color: #fff;
+}
+
+.exposure .section-header p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.exposure-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.exposure-inputs {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+}
+
+.exposure-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.exposure-field input[type="number"] {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-ink);
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius);
+}
+
+.exposure-field input[type="range"] {
+  width: 100%;
+  accent-color: var(--color-accent);
+}
+
+.exposure-field output {
+  float: right;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.exposure-results {
+  display: grid;
+  gap: 1rem;
+}
+
+.exposure-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+}
+
+.exposure-row.is-primary {
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+}
+
+.exposure-row span {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.exposure-row.is-primary span {
+  color: var(--color-ink-muted);
+}
+
+.exposure-row strong {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.exposure-note {
+  margin: 1.5rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 900px) {
+  .pain-grid { grid-template-columns: 1fr; }
+  .exposure-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* Contact page — single obvious path to the form. */
+.contact-reasons {
+  margin: 1.25rem 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-reasons li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-ink-muted);
+}
+
+.contact-reasons li:last-child {
+  border-bottom: none;
+}
+
+.contact-reasons strong {
+  color: var(--color-ink);
+}

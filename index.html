@@ -51,38 +51,54 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="asktobooked — home"><img src="logo.png" alt="" width="760" height="104"></a>
-      <nav class="nav" aria-label="Primary">
-        <a href="guide.html">Field Guide</a>
-        <a href="consulting.html">Consulting</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="guide.html#purchase" class="nav-cta">Get the Guide</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <a href="guide.html#purchase" class="btn btn-primary btn-sm">Get the Guide</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
+  <div class="drawer-overlay"></div>
+  <nav class="drawer" id="drawer" aria-label="Site navigation">
+    <div class="drawer-head">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <a class="drawer-link" href="/">Home</a>
+    <a class="drawer-link" href="guide.html">Field Guide <span class="drawer-meta">$29.99</span></a>
+    <a class="drawer-link" href="consulting.html">Consulting</a>
+    <a class="drawer-link" href="about.html">About</a>
+    <a class="drawer-link" href="contact.html">Contact</a>
+    <div class="drawer-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund-policy.html">Refunds</a>
+    </div>
+  </nav>
+
   <main id="main">
+
+    <!-- 1. Hero — the question -->
     <section class="home-hero">
       <div class="container home-hero-grid">
         <div class="home-hero-copy">
           <p class="eyebrow">AI visibility for home service businesses</p>
           <h1>When homeowners ask AI who to hire, does your business get named?</h1>
           <p class="home-hero-lead">
-            asktobooked helps local service businesses see how ChatGPT, Google, and other AI experiences understand and recommend them—then gives them a practical path to improve.
+            More customers now ask ChatGPT or Google a question and get back one answer with one name. If that name isn't yours, you don't lose the job — you never hear that it existed.
           </p>
           <div class="hero-actions">
-            <a href="guide.html" class="btn btn-primary">Start With the Field Guide</a>
-            <a href="consulting.html" class="btn btn-secondary">Explore Personalized Audits</a>
+            <a href="guide.html#purchase" class="btn btn-primary">Get the Field Guide — $29.99</a>
+            <a href="consulting.html" class="btn btn-secondary">Have us run it for you</a>
           </div>
-          <p class="hero-trades">Built for plumbing · electrical · HVAC · roofing · landscaping · cleaning · and beyond</p>
+          <p class="hero-trades">Plumbing · electrical · HVAC · roofing · landscaping · cleaning · and beyond</p>
         </div>
 
         <div class="signal-panel" aria-label="Example AI recommendation">
           <div class="signal-platform">AI assistant</div>
-          <div class="signal-question">“Who is a reliable emergency plumber near me right now?”</div>
+          <div class="signal-question">"Who is a reliable emergency plumber near me right now?"</div>
           <div class="signal-result">
             <span class="signal-kicker">Recommended</span>
             <strong>One local company</strong>
@@ -92,74 +108,106 @@
             <span>Your business</span>
             <strong>Not mentioned</strong>
           </div>
-          <p class="signal-caption">The first question is not “How do I rank?” It is “What does the system see?”</p>
+          <p class="signal-caption">The first question isn't "How do I rank?" It's "What does the system see?"</p>
         </div>
       </div>
     </section>
 
-    <section class="home-strip" aria-label="Core AI visibility principles">
-      <div class="container home-strip-grid">
-        <div>
-          <strong>Choice gets compressed</strong>
-          <span>One question can produce only a few names.</span>
-        </div>
-        <div>
-          <strong>Clarity creates confidence</strong>
-          <span>Profiles, websites, and listings need to agree.</span>
-        </div>
-        <div>
-          <strong>Visibility keeps moving</strong>
-          <span>The answer must be checked again over time.</span>
+    <!-- 2. Pain points -->
+    <section class="pain">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">What's actually going wrong</p>
+          <h2>It isn't your work. It's what the machines can read about your work.</h2>
+          <p>AI tools don't visit your jobsites. They compare whatever information they can find, interpret, and trust — so two equally good companies can get very different exposure.</p>
+        </header>
+        <div class="pain-grid">
+          <article class="pain-card">
+            <h3>One question, a few names</h3>
+            <p>A search page shows ten links. An AI answer often gives one to three businesses. Being on page one of Google no longer means being in the answer.</p>
+          </article>
+          <article class="pain-card">
+            <h3>Your information disagrees with itself</h3>
+            <p>Hours on your site, different hours on your profile, an old number in a directory. Inconsistency reads as uncertainty, and uncertainty doesn't get recommended.</p>
+          </article>
+          <article class="pain-card">
+            <h3>You can't see it happening</h3>
+            <p>There's no missed-call log for this. No notification, no bounce rate, no lost quote. The jobs simply never reach you, and nothing tells you why.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="education">
-      <div class="container education-grid">
-        <div>
-          <p class="eyebrow">The new layer of local discovery</p>
-          <h2>AI visibility, explained simply</h2>
-          <p class="lead">Homeowners are beginning to ask conversational tools the same questions they once typed into a search bar.</p>
-          <p>
-            Those tools do not judge the quality of your work firsthand. They work from the information they can find, interpret, compare, and trust. That means two equally capable businesses can receive very different exposure.
-          </p>
-          <p>
-            asktobooked turns that uncertainty into a repeatable process: ask the real questions, record the answers, find the clearest information gaps, correct them, and recheck.
-          </p>
+    <!-- 3. Estimated exposure -->
+    <section class="exposure">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">Estimated exposure</p>
+          <h2>Put your own numbers in.</h2>
+          <p>This is arithmetic, not a prediction. Change the inputs to match your business and see roughly how much revenue moves through a channel you currently can't see.</p>
+        </header>
+
+        <div class="exposure-grid">
+          <form class="exposure-inputs" id="exposure-form" aria-label="Exposure estimator">
+            <div class="exposure-field">
+              <label for="ex-jobs">Jobs per month</label>
+              <input type="number" id="ex-jobs" value="40" min="1" max="5000" step="1" inputmode="numeric">
+            </div>
+            <div class="exposure-field">
+              <label for="ex-value">Average job value ($)</label>
+              <input type="number" id="ex-value" value="350" min="1" max="100000" step="10" inputmode="numeric">
+            </div>
+            <div class="exposure-field">
+              <label for="ex-new">New customers who find you online <output id="ex-new-out">50%</output></label>
+              <input type="range" id="ex-new" value="50" min="0" max="100" step="5">
+            </div>
+            <div class="exposure-field">
+              <label for="ex-ai">Share of that discovery mediated by AI answers <output id="ex-ai-out">10%</output></label>
+              <input type="range" id="ex-ai" value="10" min="0" max="60" step="1">
+            </div>
+          </form>
+
+          <div class="exposure-results" aria-live="polite">
+            <div class="exposure-row">
+              <span>Annual revenue</span>
+              <strong id="ex-total">$168,000</strong>
+            </div>
+            <div class="exposure-row">
+              <span>From customers who found you online</span>
+              <strong id="ex-online">$84,000</strong>
+            </div>
+            <div class="exposure-row is-primary">
+              <span>Passing through AI-mediated discovery</span>
+              <strong id="ex-exposed">$8,400</strong>
+            </div>
+            <p class="exposure-note">
+              Every figure here comes from the numbers you entered. Nobody can tell you what share of your customers already use AI to pick a contractor, or what you'd win back by being named — which is exactly why the honest first step is testing what the systems say about you today, rather than modelling it.
+            </p>
+          </div>
         </div>
-        <aside class="clarity-card">
-          <p class="eyebrow">The practical question</p>
-          <h3>Can an AI system clearly answer these?</h3>
-          <ul class="clarity-list">
-            <li>What services do you actually provide?</li>
-            <li>Where do you provide them?</li>
-            <li>Are your hours and contact details current?</li>
-            <li>Does the same information appear everywhere?</li>
-            <li>Does your website answer real customer questions?</li>
-          </ul>
-        </aside>
       </div>
     </section>
 
+    <!-- 4. Three channels -->
     <section class="pathways">
       <div class="container">
         <header class="section-header">
-          <p class="eyebrow">Choose the right starting point</p>
-          <h2>Learn it yourself. Get it diagnosed. Keep it monitored.</h2>
-          <p>Each offer solves a different stage of the same problem.</p>
+          <p class="eyebrow">Three ways in</p>
+          <h2>Learn it yourself. Have it diagnosed. Keep it monitored.</h2>
+          <p>Same process, three levels of involvement.</p>
         </header>
 
         <div class="pathway-grid">
           <article class="pathway-card pathway-featured">
-            <span class="pathway-tag">Best first step</span>
+            <span class="pathway-tag">Start here</span>
             <p class="edition">No. 001 — Self-Audit Edition</p>
             <h3>Who Shows Up First? Field Guide</h3>
-            <p>Run a practical self-audit, compare the businesses being named, and complete a focused seven-day fix plan.</p>
+            <p>Run the audit yourself in an afternoon. Prompts, scorecard, checklists, and a seven-day fix plan.</p>
             <ul>
               <li>14-page PDF</li>
               <li>Ready-made prompts and scorecard</li>
               <li>Profile, website, and directory checklists</li>
-              <li>One-time purchase: $29.99</li>
+              <li>$29.99, one-time</li>
             </ul>
             <a href="guide.html" class="btn btn-primary btn-block">See the Field Guide</a>
           </article>
@@ -167,20 +215,20 @@
           <article class="pathway-card">
             <span class="pathway-tag pathway-tag-muted">Done with you</span>
             <h3>Personalized AI Visibility Audit</h3>
-            <p>We test the questions that matter in your trade and market, compare competitors, and turn the findings into a prioritized action plan.</p>
+            <p>We test your trade in your market, compare the competitors being named ahead of you, and hand back a prioritized fix list.</p>
             <ul>
               <li>Business-specific testing</li>
               <li>Competitor comparison</li>
               <li>Plain-language recommendations</li>
-              <li>Limited monthly capacity</li>
+              <li>Three clients per month</li>
             </ul>
             <a href="consulting.html" class="btn btn-secondary btn-block">Explore Consulting</a>
           </article>
 
           <article class="pathway-card">
             <span class="pathway-tag pathway-tag-muted">In development</span>
-            <h3>Continuous Visibility Monitoring</h3>
-            <p>A recurring system designed to track how your business is represented across AI experiences without repeating the audit by hand.</p>
+            <h3>Continuous Monitoring</h3>
+            <p>The same checks re-run on a schedule, so you see when your visibility moves instead of finding out months later.</p>
             <ul>
               <li>Repeated recommendation checks</li>
               <li>Change detection</li>
@@ -193,96 +241,21 @@
       </div>
     </section>
 
-    <section class="process">
+    <!-- 5. Honest caveat -->
+    <section class="caveat">
       <div class="container">
-        <header class="section-header">
-          <p class="eyebrow">The operating system</p>
-          <h2>Four actions. Repeated deliberately.</h2>
-          <p>AI visibility is not a one-time trick. It is a lightweight business habit.</p>
-        </header>
-        <ol class="process-grid">
-          <li class="process-card">
-            <span>01</span>
-            <h3>Ask</h3>
-            <p>Use the questions real homeowners ask in your service area.</p>
-          </li>
-          <li class="process-card">
-            <span>02</span>
-            <h3>Compare</h3>
-            <p>Record who gets named, what is said, and whether it is accurate.</p>
-          </li>
-          <li class="process-card">
-            <span>03</span>
-            <h3>Correct</h3>
-            <p>Strengthen the clearest gaps across your profile, website, and listings.</p>
-          </li>
-          <li class="process-card">
-            <span>04</span>
-            <h3>Recheck</h3>
-            <p>Repeat the same tests so you can see whether the answer changed.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="guide-feature">
-      <div class="container guide-feature-grid">
-        <div>
-          <p class="eyebrow">Start without hiring anyone</p>
-          <h2>Run your first AI visibility audit this week.</h2>
-          <p>The field guide gives you the prompts, scorecard, checklists, and daily plan. No code. No software installation. No vague promise that a ranking will magically appear.</p>
-        </div>
-        <div class="guide-feature-action">
-          <span class="guide-feature-price">$29.99</span>
-          <span>One-time purchase · PDF emailed within a few hours</span>
-          <a href="guide.html#purchase" class="btn btn-primary btn-large btn-block">Get the Field Guide</a>
-          <a href="guide.html" class="text-link">Review everything included first →</a>
+        <div class="caveat-box">
+          <h2>What we won't tell you</h2>
+          <p>
+            Nobody can guarantee your business a spot in a system that regenerates its answers every time it's asked. Results shift by platform, wording, location, and time. Anyone promising otherwise is selling something.
+          </p>
+          <p>
+            What you can do is make your business easier to read, fix what disagrees, and measure the answer again next month. That's the whole system — and it's what everything here teaches.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="principles">
-      <div class="container">
-        <header class="section-header">
-          <p class="eyebrow">Built without the usual marketing fog</p>
-          <h2>Clear evidence. Plain language. No guaranteed rankings.</h2>
-        </header>
-        <div class="principles-grid">
-          <article class="principle-card">
-            <h3>Evidence before assumptions</h3>
-            <p>We begin by testing what AI systems actually return instead of guessing from a traditional search position.</p>
-          </article>
-          <article class="principle-card">
-            <h3>Specific before generic</h3>
-            <p>The useful answer depends on your business, trade, city, services, and competitors—not a universal checklist alone.</p>
-          </article>
-          <article class="principle-card">
-            <h3>Habits before hacks</h3>
-            <p>The durable advantage is accurate information and regular rechecking, not a temporary loophole or keyword trick.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq home-faq">
-      <div class="container">
-        <h2>Common questions</h2>
-        <dl class="faq-list">
-          <div class="faq-item">
-            <dt>Is this just another name for SEO?</dt>
-            <dd>No. Traditional local search still matters, and much of the groundwork overlaps. The audit specifically tests how conversational and AI-generated answers represent and recommend your business.</dd>
-          </div>
-          <div class="faq-item">
-            <dt>Can anyone guarantee that my business will be recommended?</dt>
-            <dd>No. Results can change by platform, location, wording, personalization, and time. The goal is to strengthen the information available about your business and measure what changes.</dd>
-          </div>
-          <div class="faq-item">
-            <dt>Where should I begin?</dt>
-            <dd>Begin with the field guide when you want to understand and run the process yourself. Choose consulting when you want the audit performed and interpreted for your specific business.</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">

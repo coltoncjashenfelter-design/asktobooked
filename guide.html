@@ -86,19 +86,32 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="asktobooked — home"><img src="logo.png" alt="" width="760" height="104"></a>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="guide.html" aria-current="page">Field Guide</a>
-        <a href="consulting.html">Consulting</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="#purchase" class="nav-cta">Get the Guide</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <a href="guide.html#purchase" class="btn btn-primary btn-sm">Get the Guide</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
+
+  <div class="drawer-overlay"></div>
+  <nav class="drawer" id="drawer" aria-label="Site navigation">
+    <div class="drawer-head">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <a class="drawer-link" href="/">Home</a>
+    <a class="drawer-link" href="guide.html">Field Guide <span class="drawer-meta">$29.99</span></a>
+    <a class="drawer-link" href="consulting.html">Consulting</a>
+    <a class="drawer-link" href="about.html">About</a>
+    <a class="drawer-link" href="contact.html">Contact</a>
+    <div class="drawer-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund-policy.html">Refunds</a>
+    </div>
+  </nav>
 
   <main id="main">
     <!-- Hero -->
