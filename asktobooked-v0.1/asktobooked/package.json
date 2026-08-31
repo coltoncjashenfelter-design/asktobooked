@@ -1,0 +1,22 @@
+{
+  "name": "asktobooked-homeowner-continuity",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "db:create": "wrangler d1 create asktobooked",
+    "db:migrate:local": "wrangler d1 migrations apply asktobooked --local",
+    "db:migrate:remote": "wrangler d1 migrations apply asktobooked --remote",
+    "db:seed:local": "node scripts/seed.mjs",
+    "deploy": "wrangler pages deploy .",
+    "test": "npm run test:core && npm run test:data && npm run test:api && npm run test:auth",
+    "test:core": "node tests/core.test.cjs",
+    "test:data": "node tests/data.test.cjs",
+    "test:api": "node tests/api.test.cjs",
+    "test:auth": "node tests/auth.test.cjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#17233d" />
+  <meta name="robots" content="noindex" />
+  <title>Sign in — asktobooked</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <div class="auth-brand">
+      <a class="brand" href="index.html">ask<span>to</span>booked</a>
+      <div class="product-kicker">Homeowner Continuity</div>
+    </div>
+
+    <section class="card auth-card">
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab active" id="tabSignIn" role="tab" aria-selected="true">Sign in</button>
+        <button class="auth-tab" id="tabCreate" role="tab" aria-selected="false">Create account</button>
+      </div>
+
+      <form id="authForm" novalidate>
+        <div class="form-grid one">
+          <label id="nameField" hidden>Your name<input id="authName" type="text" autocomplete="name" /></label>
+          <label id="companyField" hidden>Business name<input id="authCompany" type="text" autocomplete="organization" /></label>
+          <label>Work email<input id="authEmail" type="email" autocomplete="email" required /></label>
+          <label>Password<input id="authPassword" type="password" autocomplete="current-password" required /></label>
+        </div>
+        <p class="auth-hint" id="authHint">Use the account your organization was set up with.</p>
+        <p class="auth-error" id="authError" role="alert" hidden></p>
+        <div class="form-actions">
+          <button class="btn" id="authSubmit" type="submit">Sign in</button>
+        </div>
+      </form>
+
+      <p class="muted auth-footnote">Contractor accounts only. Homeowners use the private Home Record link sent to them after a job — it never grants dashboard access.</p>
+    </section>
+  </main>
+
+  <script src="core.js"></script>
+  <script src="data.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

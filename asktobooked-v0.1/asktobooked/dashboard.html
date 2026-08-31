@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#17233d" />
+  <title>asktobooked — Homeowner Continuity</title>
+  <meta name="description" content="Turn completed home-service jobs into persistent homeowner relationships and future revenue." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-wrap">
+        <a class="brand" href="index.html">ask<span>to</span>booked</a>
+        <div class="product-kicker">Homeowner Continuity</div>
+      </div>
+      <nav class="nav" aria-label="Product">
+        <button class="nav-link active" data-view="overview"><span>◫</span>Overview</button>
+        <button class="nav-link" data-view="homes"><span>⌂</span>Homes</button>
+        <button class="nav-link" data-view="opportunities"><span>↗</span>Opportunities</button>
+        <button class="nav-link" data-view="automations"><span>⚡</span>Automations</button>
+        <button class="nav-link" data-view="visibility"><span>◎</span>Visibility</button>
+        <button class="nav-link" data-view="audits"><span>▤</span>Audits</button>
+        <div class="nav-divider"></div>
+        <button class="nav-link" data-view="import"><span>⇧</span>Import</button>
+        <button class="nav-link" data-view="settings"><span>⚙</span>Settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <select class="org-picker" id="orgPicker" aria-label="Switch organization" hidden></select>
+        <div class="mini-status"><span class="status-dot warn" id="dataModeDot"></span><div><strong id="dataModeTitle">Connecting…</strong><small id="dataModeNote">Checking the backend</small></div></div>
+        <div class="session-row" id="sessionRow" hidden><small id="sessionEmail"></small><button class="text-btn" id="signOutBtn">Sign out</button></div>
+        <p>Win the homeowner.<br><strong>Keep the home.</strong></p>
+      </div>
+    </aside>
+
+    <main class="main state-loading" id="appMain">
+      <div class="app-loading" id="appLoading" role="status" aria-live="polite">
+        <div class="loading-card">
+          <span class="spinner" aria-hidden="true"></span>
+          <strong>Loading account</strong>
+          <small>Reading persisted account data from D1…</small>
+        </div>
+      </div>
+
+      <div class="app-banner warn" id="appBanner" role="alert" hidden>
+        <div><strong id="appBannerTitle"></strong><span id="appBannerMessage"></span></div>
+        <div class="banner-actions"><button class="btn secondary" data-retry>Retry</button><button class="text-btn" id="appBannerDismiss">Dismiss</button></div>
+      </div>
+
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Client workspace</div>
+          <h1 id="businessTitle">Northwest Heating &amp; Air</h1>
+          <p id="businessMeta" class="muted">HVAC · Whatcom County</p>
+        </div>
+        <div class="top-actions">
+          <span class="pill good" id="engineStatus">Opportunity engine active</span>
+          <button class="btn secondary" id="recalcBtn">Recalculate</button>
+          <button class="btn secondary" id="loadDemoBtn">Reload demo</button>
+        </div>
+      </header>
+
+      <section class="card empty-panel" id="appEmpty" hidden>
+        <div class="eyebrow">No account data</div>
+        <h2>This organization has no records in D1</h2>
+        <p class="muted">The API answered, but <code id="appEmptyOrg"></code> does not exist in the connected database. Seed the Northwest Heating &amp; Air demo account to get a full working account, or point this page at a different organization with <code>?organization_id=…</code>.</p>
+        <div class="form-actions"><button class="btn" id="seedDemoBtn">Seed demo account in D1</button><button class="btn secondary" data-retry>Retry connection</button></div>
+      </section>
+
+      <section class="view active" id="overview">
+        <div class="hero-card">
+          <div>
+            <div class="eyebrow light">Homeowner continuity</div>
+            <h2>You already paid to win the homeowner.<br>Don’t lose the home.</h2>
+            <p>asktobooked turns completed jobs and existing customers into persistent home relationships — then surfaces what each home is likely to need next.</p>
+          </div>
+          <div class="hero-side">
+            <small>Current continuity rate</small>
+            <strong id="heroContinuity">—</strong>
+            <span>home records claimed</span>
+          </div>
+        </div>
+
+        <div class="kpi-grid" id="overviewKpis"></div>
+
+        <div class="grid two">
+          <article class="card">
+            <div class="card-head"><div><div class="eyebrow">Needs attention</div><h3>Highest-value opportunities</h3></div><button class="text-btn" data-jump="opportunities">View all</button></div>
+            <div id="priorityOpportunities" class="stack"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><div class="eyebrow">Installed base</div><h3>Opportunity by type</h3></div><span class="tiny">Open only</span></div>
+            <div id="opportunityBreakdown" class="stack compact"></div>
+          </article>
+        </div>
+
+        <article class="card continuity-card">
+          <div class="card-head"><div><div class="eyebrow">The loop</div><h3>From one job to the next</h3></div></div>
+          <div class="loop-grid">
+            <div><span>01</span><strong>Win</strong><small>Homeowner finds and books you.</small></div>
+            <div><span>02</span><strong>Record</strong><small>Job becomes durable home history.</small></div>
+            <div><span>03</span><strong>Detect</strong><small>asktobooked finds the next need.</small></div>
+            <div><span>04</span><strong>Return</strong><small>Homeowner routes back to you.</small></div>
+            <div><span>05</span><strong>Compound</strong><small>The relationship gets more valuable.</small></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="view" id="homes">
+        <div class="section-head">
+          <div><div class="eyebrow">Installed base</div><h2>Homes Under Care</h2><p class="muted">The durable relationship layer — not a disposable lead list.</p></div>
+          <div class="section-actions"><input class="search" id="homeSearch" placeholder="Search homeowner or address" /><button class="btn" data-jump="import">Import jobs</button></div>
+        </div>
+        <div class="kpi-grid small" id="homeKpis"></div>
+        <article class="card table-card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Home</th><th>Homeowner</th><th>Last service</th><th>Lifetime value</th><th>Next need</th><th>Record</th><th></th></tr></thead><tbody id="homesTable"></tbody></table></div></article>
+      </section>
+
+      <section class="view" id="opportunities">
+        <div class="section-head">
+          <div><div class="eyebrow">Opportunity Engine</div><h2>Revenue already inside the business</h2><p class="muted">Deterministic rules turn home history into a prioritized action queue.</p></div>
+          <button class="btn" id="recalcBtn2">Run engine</button>
+        </div>
+        <div class="kpi-grid small" id="opportunityKpis"></div>
+        <article class="card filter-bar">
+          <input class="search" id="oppSearch" placeholder="Search opportunities" />
+          <select id="oppTypeFilter"><option value="">All types</option></select>
+          <select id="oppConfidenceFilter"><option value="">All confidence</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+          <select id="oppStatusFilter"><option value="open">Open</option><option value="booked">Booked</option><option value="won">Won</option><option value="">All statuses</option></select>
+        </article>
+        <div id="opportunityList" class="stack"></div>
+      </section>
+
+      <section class="view" id="automations">
+        <div class="section-head"><div><div class="eyebrow">Lifecycle engine</div><h2>Automations</h2><p class="muted">Rules that convert home history into timely opportunity. Messaging stays preview-only until consent workflows are connected.</p></div></div>
+        <div class="callout amber"><strong>Pre-launch safety rail:</strong> rules create internal opportunities now. Real outbound SMS/email should only activate after consent, opt-out, sender identity, and deliverability controls are wired.</div>
+        <div id="automationList" class="grid two"></div>
+      </section>
+
+      <section class="view" id="visibility">
+        <div class="section-head"><div><div class="eyebrow">Acquisition layer</div><h2>Visibility</h2><p class="muted">AI and local discovery remain part of the system — they are how new homes enter the relationship loop.</p></div><button class="btn secondary" id="addVisibilityBtn">Add snapshot</button></div>
+        <div class="kpi-grid small" id="visibilityKpis"></div>
+        <div class="grid two">
+          <article class="card"><div class="card-head"><h3>Visibility snapshots</h3><span class="tiny">Like-for-like monitoring</span></div><div class="table-wrap" id="visibilityTable"></div></article>
+          <article class="card"><div class="card-head"><h3>Tracked buyer questions</h3><button class="text-btn" id="addQueryBtn">+ Add</button></div><div id="queryList" class="stack compact"></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="audits">
+        <div class="section-head"><div><div class="eyebrow">Sales wedge</div><h2>Homeowner Continuity Audit</h2><p class="muted">A four-part diagnosis that makes the category visible before the prospect buys.</p></div><button class="btn secondary" id="printAuditBtn">Print audit</button></div>
+        <div class="audit-hero card">
+          <div><div class="eyebrow">Continuity score</div><strong id="overallAuditScore">—</strong><p>How effectively this business turns homeowner attention into durable home relationships.</p></div>
+          <div id="auditBars" class="audit-bars"></div>
+        </div>
+        <div class="grid two">
+          <article class="card"><div class="eyebrow">What it means</div><h3 id="auditHeadline">—</h3><p id="auditExplanation" class="muted"></p></article>
+          <article class="card"><div class="eyebrow">Audit framing</div><h3>Four questions, not an SEO report</h3><ol class="plain-list"><li>Can the right homeowner discover you?</li><li>Can intent become a booking without friction?</li><li>Where does already-created revenue leak?</li><li>What keeps the home connected after the job?</li></ol></article>
+        </div>
+      </section>
+
+      <section class="view" id="import">
+        <div class="section-head"><div><div class="eyebrow">Fastest path to value</div><h2>Import historical jobs</h2><p class="muted">Turn the contractor’s existing database into Homes, service history, and revenue opportunities immediately.</p></div></div>
+        <div class="grid two import-grid">
+          <article class="card">
+            <h3>Upload CSV</h3>
+            <p class="muted">Recommended columns: first_name, last_name, email, phone, address, city, state, zip, job_date, job_type, amount.</p>
+            <label class="dropzone" for="csvFile"><strong>Choose a CSV file</strong><span>or paste CSV below</span><input id="csvFile" type="file" accept=".csv,text/csv" hidden /></label>
+            <textarea id="csvText" class="code-area" rows="13" placeholder="first_name,last_name,email,phone,address,city,state,zip,job_date,job_type,amount"></textarea>
+            <div class="form-actions"><button class="btn" id="importBtn">Import and run engine</button><a class="btn secondary" href="sample-import.csv" download>Sample CSV</a></div>
+          </article>
+          <article class="card">
+            <div class="eyebrow">Import result</div><h3 id="importTitle">Ready for history</h3>
+            <div id="importResult" class="import-result"><p class="muted">Importing historical jobs is the fastest way to make asktobooked useful on day one. The importer deduplicates homes by normalized address, creates homeowner relationships, records service events, creates installed assets when possible, then runs the Opportunity Engine.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="settings">
+        <div class="section-head"><div><div class="eyebrow">Configuration</div><h2>Business settings</h2></div><button class="btn" id="saveSettingsBtn">Save settings</button></div>
+        <article class="card form-grid" id="settingsForm">
+          <label>Business name<input id="setName" /></label>
+          <label>Industry<input id="setIndustry" /></label>
+          <label>City<input id="setCity" /></label>
+          <label>State<input id="setState" /></label>
+          <label>Service area<input id="setServiceArea" /></label>
+          <label>Phone<input id="setPhone" /></label>
+          <label>Email<input id="setEmail" /></label>
+          <label>Website<input id="setWebsite" /></label>
+          <label class="wide">Booking URL<input id="setBookingUrl" placeholder="https://..." /></label>
+          <label>Average job value<input id="setAvgJob" type="number" min="0" /></label>
+          <label>asktobooked monthly fee<input id="setFee" type="number" min="0" /></label>
+        </article>
+        <div class="grid two">
+          <article class="card"><h3>Data controls</h3><p class="muted">Export a JSON snapshot of the account as currently loaded, or clear this browser’s cached and offline copies. Clearing browser data never deletes records stored in D1.</p><div class="form-actions"><button class="btn secondary" id="exportBtn">Export JSON</button><button class="btn danger" id="resetBtn">Clear browser data</button></div></article>
+          <article class="card"><h3>Backend</h3><p class="muted" id="settingsModeNote"></p><div class="code-pill">Binding: <strong>DB</strong></div> <div class="code-pill">Organization: <strong id="settingsOrgId">—</strong></div></article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="homeDialog" class="home-dialog"><div id="homeDialogBody"></div></dialog>
+  <dialog id="simpleDialog" class="simple-dialog"><form method="dialog" id="simpleDialogForm"><div id="simpleDialogBody"></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="core.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

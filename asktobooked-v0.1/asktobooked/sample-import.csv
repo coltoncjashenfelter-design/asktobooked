@@ -1,0 +1,7 @@
+first_name,last_name,email,phone,address,city,state,zip,job_date,job_type,amount,manufacturer,model
+Alex,Reed,alex.reed@example.com,360-555-2110,719 Pine St,Bellingham,WA,98225,2024-06-14,Heat Pump Installation,11250,Mitsubishi,Hyper-Heat
+Alex,Reed,alex.reed@example.com,360-555-2110,719 Pine St,Bellingham,WA,98225,2025-06-20,Annual Maintenance,249,,
+Jamie,Owens,jamie.owens@example.com,360-555-2111,404 Garden Ave,Ferndale,WA,98248,2009-11-02,Furnace Installation,5900,Carrier,Performance
+Jamie,Owens,jamie.owens@example.com,360-555-2111,404 Garden Ave,Ferndale,WA,98248,2025-12-11,Furnace Repair,880,,
+Jamie,Owens,jamie.owens@example.com,360-555-2111,404 Garden Ave,Ferndale,WA,98248,2026-04-18,Furnace Repair,1260,,
+Morgan,Price,morgan.price@example.com,360-555-2112,118 Harbor View Dr,Bellingham,WA,98225,2026-08-10,System Replacement Estimate,12400,,

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#17233d" />
+  <title>asktobooked — Keep the Home</title>
+  <meta name="description" content="The homeowner continuity platform for home-service businesses. Turn completed jobs into persistent home relationships and future revenue." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="marketing-body">
+  <header class="site-header"><a class="brand" href="index.html" style="color:#17233d">ask<span>to</span>booked</a><nav class="site-nav"><a class="btn secondary" href="home.html">Home Record</a><a class="btn" href="dashboard.html">Open product</a></nav></header>
+  <main class="marketing-main">
+    <section class="marketing-hero">
+      <div class="marketing-copy"><div class="eyebrow">Homeowner continuity for home services</div><h1>You already paid to win the homeowner.<br>Don’t lose the home.</h1><p>asktobooked turns completed jobs and existing customers into persistent home relationships — identifying future service needs, recovering missed revenue, and bringing homeowners back when their home needs you again.</p><div class="marketing-actions"><a class="btn" href="dashboard.html">Open working product</a><a class="btn secondary" href="dashboard.html#audits">See the Continuity Audit</a></div></div>
+      <aside class="proof-card"><div class="proof-top"><div><div class="eyebrow">Demo account</div><h3>Northwest Heating &amp; Air</h3></div><span class="pill good">Engine active</span></div><div class="proof-number" id="marketingOpp">$—</div><p class="muted" style="font-size:11px">identified opportunity inside the existing customer base</p><div class="proof-list"><div class="proof-item"><span>Homes Under Care</span><strong id="marketingHomes">—</strong></div><div class="proof-item"><span>Open opportunities</span><strong id="marketingCount">—</strong></div><div class="proof-item"><span>Home Records claimed</span><strong id="marketingContinuity">—</strong></div></div></aside>
+    </section>
+    <section class="marketing-grid"><article><span>DISCOVER</span><h3>New homeowners find you.</h3><p>AI visibility, local discovery, trust, reviews, and buyer-intent monitoring.</p></article><article><span>CONVERT</span><h3>Demand becomes work.</h3><p>Booking, response speed, conversion, and leak detection around active demand.</p></article><article><span>RETAIN</span><h3>Every job becomes a relationship.</h3><p>Home Records, equipment, service history, and preferred-provider continuity.</p></article><article><span>RECAPTURE</span><h3>Find what the home needs next.</h3><p>The Opportunity Engine turns history into maintenance, replacement, estimate, and reactivation value.</p></article></section>
+  </main>
+  <script src="core.js"></script><script>const C=AskToBookedCore;let s=C.load()||C.makeDemoState();C.save(s);const m=C.dashboardMetrics(s);document.querySelector('#marketingOpp').textContent=m.identifiedOpportunity.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});document.querySelector('#marketingHomes').textContent=m.homesUnderCare;document.querySelector('#marketingCount').textContent=m.openOpportunities;document.querySelector('#marketingContinuity').textContent=m.continuityRate.toFixed(1)+'%';</script>
+</body>
+</html>

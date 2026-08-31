@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "asktobooked",
+  "compatibility_date": "2026-08-30",
+  "pages_build_output_dir": ".",
+  "vars": {
+    // POST /api/demo/seed generates the Northwest Heating & Air demo account
+    // and its demo login. The API defaults this to "false" when the var is
+    // absent, so seeding is off in production unless it is set here explicitly.
+    // Never enable it in an environment holding real contractor data.
+    "ALLOW_DEMO_SEED": "true",
+    // Self-serve signup. Registration only ever creates a brand new
+    // organization owned by the registrant; it can never join an existing one.
+    // Set to "false" to make accounts invite-only.
+    "ALLOW_SIGNUP": "true"
+    // DEMO_PASSWORD overrides the seeded demo login's password. Set it with
+    // `wrangler pages secret put DEMO_PASSWORD` rather than here.
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "asktobooked",
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
