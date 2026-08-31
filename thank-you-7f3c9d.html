@@ -72,11 +72,33 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="asktobooked — home">
-        <img src="logo.png" alt="asktobooked" width="760" height="104">
-      </a>
+      <a href="/" class="logo" aria-label="asktobooked — home"><img src="logo.png" alt="" width="760" height="104"></a>
+      <div class="header-actions">
+        <a href="guide.html#purchase" class="btn btn-primary btn-sm">Get the Guide</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
+
+  <div class="drawer-overlay"></div>
+  <nav class="drawer" id="drawer" aria-label="Site navigation">
+    <div class="drawer-head">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <a class="drawer-link" href="/">Home</a>
+    <a class="drawer-link" href="guide.html">Field Guide <span class="drawer-meta">$29.99</span></a>
+    <a class="drawer-link" href="consulting.html">Consulting</a>
+    <a class="drawer-link" href="about.html">About</a>
+    <a class="drawer-link" href="contact.html">Contact</a>
+    <div class="drawer-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund-policy.html">Refunds</a>
+    </div>
+  </nav>
 
   <main class="delivery-page">
     <section class="delivery-card" aria-labelledby="delivery-title">
@@ -89,7 +111,7 @@
       <p class="delivery-note">Your Stripe/Link receipt will arrive separately.</p>
 
       <p class="delivery-help">
-        Don't see it soon? Check your spam folder, then email <a href="mailto:contact@asktobooked.com">contact@asktobooked.com</a> from the address you used at checkout.
+        Don't see it soon? Check your spam folder, then reach us at <a href="contact-form.html?topic=order">contact@asktobooked.com</a> and mention the address you used at checkout.
       </p>
     </section>
   </main>

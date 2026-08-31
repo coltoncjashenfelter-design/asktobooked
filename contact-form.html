@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send a Message | asktobooked</title>
+  <meta name="description" content="Send a message to asktobooked. Goes straight to our inbox and answered within one business day.">
+  <link rel="canonical" href="https://asktobooked.com/contact-form">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#1a2744">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="asktobooked — home"><img src="logo.png" alt="" width="760" height="104"></a>
+      <div class="header-actions">
+        <a href="guide.html#purchase" class="btn btn-primary btn-sm">Get the Guide</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-overlay"></div>
+  <nav class="drawer" id="drawer" aria-label="Site navigation">
+    <div class="drawer-head">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <a class="drawer-link" href="/">Home</a>
+    <a class="drawer-link" href="guide.html">Field Guide <span class="drawer-meta">$29.99</span></a>
+    <a class="drawer-link" href="consulting.html">Consulting</a>
+    <a class="drawer-link" href="about.html">About</a>
+    <a class="drawer-link" href="contact.html">Contact</a>
+    <div class="drawer-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund-policy.html">Refunds</a>
+    </div>
+  </nav>
+
+  <main id="main" class="page-main">
+    <div class="container page-narrow">
+      <header class="page-header">
+        <p class="eyebrow">Contact</p>
+        <h1>Send us a message</h1>
+        <p class="lead">Fill this in and it arrives in our inbox as a normal email. You'll get a reply within one business day.</p>
+      </header>
+
+      <div id="sent" class="form-banner" role="status">
+        <strong>Message sent.</strong> You'll hear back within one business day.
+      </div>
+
+      <div class="contact-card">
+        <!-- Form posts to Web3Forms, which relays submissions to contact@asktobooked.com. -->
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="e4150cda-a237-42c2-b1c8-487d62b16b6a">
+          <input type="hidden" name="subject" id="form-subject" value="Website message">
+          <input type="hidden" name="from_name" value="asktobooked.com website">
+          <input type="hidden" name="redirect" id="form-redirect" value="https://asktobooked.com/contact-form.html#sent">
+          <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-field">
+            <label for="topic">What's this about?</label>
+            <select id="topic" name="topic">
+              <option value="general">General question</option>
+              <option value="mini-audit">Free mini-audit request</option>
+              <option value="strategy-call">Strategy call — AI Visibility Audit</option>
+              <option value="order">Order or download help</option>
+              <option value="refund">Refund request</option>
+            </select>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Your name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <p class="field-hint" id="email-hint" hidden>Use the email address from your checkout — that's how we find your order fastest.</p>
+            </div>
+          </div>
+
+          <div class="form-grid form-grid-3">
+            <div class="form-field">
+              <label for="business">Business name</label>
+              <input type="text" id="business" name="business_name" autocomplete="organization">
+            </div>
+            <div class="form-field">
+              <label for="trade">Trade</label>
+              <input type="text" id="trade" name="trade" placeholder="e.g. plumber, electrician">
+            </div>
+            <div class="form-field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" autocomplete="address-level2">
+            </div>
+          </div>
+
+          <div class="form-grid" id="call-fields">
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="form-field">
+              <label for="best-time">Best time to call</label>
+              <input type="text" id="best-time" name="best_time_to_call" placeholder="e.g. weekday mornings, Central time">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="What can we help with?"></textarea>
+          </div>
+
+          <div class="form-error" id="form-error" role="alert" hidden>
+            <p><strong>Your message didn't send.</strong> This is usually an ad blocker or privacy extension blocking our form service — not a problem with what you wrote.</p>
+            <p>Two ways through: pause your blocker for this page and press Send again, or use the button below to open the same message in your own email app.</p>
+            <p><a href="mailto:contact@asktobooked.com" id="form-mailto" class="btn btn-secondary">Send it from my email app instead</a></p>
+            <p class="form-error-note">Either way it reaches <strong>contact@asktobooked.com</strong>.</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large" id="form-submit">Send Message</button>
+          <p class="form-note">Or email <strong>contact@asktobooked.com</strong> directly. Same inbox.</p>
+        </form>
+
+        <div class="form-success" id="form-success" hidden>
+          <h2>Message sent.</h2>
+          <p>It's in our inbox. You'll get a reply within one business day. Check your spam folder if you don't see us.</p>
+          <p><a href="/" class="btn btn-secondary">Back to the homepage</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo logo-footer"><img src="logo-light.png" alt="asktobooked" width="760" height="104" loading="lazy"></span>
+        <p>Check again next month. That's most of it.</p>
+      </div>
+      <div class="footer-links">
+        <a href="guide.html">Field Guide</a>
+        <a href="consulting.html">Consulting</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-links footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="refund-policy.html">Refunds</a>
+        <a href="contact-form.html">contact@asktobooked.com</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 asktobooked. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+
+      var topicSelect = document.getElementById('topic');
+      var subjectInput = document.getElementById('form-subject');
+      var callFields = document.getElementById('call-fields');
+      var emailHint = document.getElementById('email-hint');
+      var messageField = document.getElementById('message');
+      var errorBox = document.getElementById('form-error');
+      var successBox = document.getElementById('form-success');
+      var submitBtn = document.getElementById('form-submit');
+
+      var topics = {
+        'general':       { subject: 'Website message', message: true,  call: false },
+        'mini-audit':    { subject: 'Free mini-audit request', message: false, call: false },
+        'strategy-call': { subject: 'Strategy Call Request — AI Visibility Audit', message: false, call: true },
+        'order':         { subject: 'Order / download help', message: true,  call: false },
+        'refund':        { subject: 'Refund request', message: true,  call: false }
+      };
+
+      function applyTopic(value) {
+        var t = topics[value] || topics.general;
+        subjectInput.value = t.subject;
+        callFields.hidden = !t.call;
+        messageField.required = t.message;
+        var label = messageField.previousElementSibling;
+        if (label) {
+          label.innerHTML = 'Message' + (t.message ? ' <span class="req" aria-hidden="true">*</span>' : ' <span class="optional">(optional)</span>');
+        }
+        emailHint.hidden = !(value === 'order' || value === 'refund');
+      }
+
+      // Preselect topic from ?topic= in the URL
+      var param = new URLSearchParams(window.location.search).get('topic');
+      if (param && topics[param]) topicSelect.value = param;
+      applyTopic(topicSelect.value);
+
+      topicSelect.addEventListener('change', function () {
+        applyTopic(topicSelect.value);
+      });
+
+      form.setAttribute('novalidate', '');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errorBox.hidden = true;
+
+        if (!form.reportValidity()) return;
+
+        var data = new FormData(form);
+        data.delete('redirect'); // AJAX path handles success inline
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          return res.json();
+        }).then(function (json) {
+          if (json.success) {
+            form.hidden = true;
+            successBox.hidden = false;
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            throw new Error(json.message || 'Submission failed');
+          }
+        }).catch(function (err) {
+          // Log the real reason so failures are diagnosable from the console.
+          console.error('[contact-form] Submission failed:', err && err.message);
+
+          // Nothing was lost — hand them the same message as a pre-filled email.
+          var mailto = document.getElementById('form-mailto');
+          if (mailto) {
+            var topicEl = document.getElementById('topic');
+            var topicTxt = topicEl ? topicEl.options[topicEl.selectedIndex].text : 'Website message';
+            var lines = [];
+            [['Name','name'], ['Email','email'], ['Business','business'],
+             ['Trade','trade'], ['City','city'], ['Phone','phone'],
+             ['Best time to call','best-time']].forEach(function (pair) {
+              var el = document.getElementById(pair[1]);
+              if (el && el.value.trim()) lines.push(pair[0] + ': ' + el.value.trim());
+            });
+            var msgEl = document.getElementById('message');
+            if (msgEl && msgEl.value.trim()) lines.push('', msgEl.value.trim());
+            mailto.href = 'mailto:contact@asktobooked.com'
+              + '?subject=' + encodeURIComponent(topicTxt + ' — asktobooked.com')
+              + '&body=' + encodeURIComponent(lines.join('\n'));
+          }
+
+          errorBox.hidden = false;
+          errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

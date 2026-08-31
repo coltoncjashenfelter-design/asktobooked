@@ -1,39 +1,8 @@
-# --- Secrets & Python ---
 .env
 *.pyc
 __pycache__/
 .venv/
 venv/
-
-# --- Visibility engine: client data & run output ---
 visibility-engine/data/runs/
 visibility-engine/data/clients/*.json
 !visibility-engine/data/clients/_example.json
-
-# --- PAID PRODUCT FILES ---
-# Never commit these: anything pushed to GitHub is published by
-# Cloudflare Pages at a public, guessable URL. Deliver the guide
-# by email after purchase instead.
-*.pdf
-*.odg
-asktobooked-secure-download.zip
-
-# --- Large local files (GitHub rejects >100MB) ---
-*.msi
-*.exe
-*.dmg
-
-# --- Internal docs ---
-SETUP.md
-
-# --- OS cruft ---
-Thumbs.db
-desktop.ini
-.DS_Store
-
-# --- Logo source file (large; exported assets are committed instead) ---
-asktobooked Logo.png
-_*.png
-
-# --- Visibility engine: internal tooling, never deploy ---
-visibility-engine/
